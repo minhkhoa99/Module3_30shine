@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/schedule.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="booking-single-screen">
+        <div class="body relative ">
+            <div class="new-top-navigator pointer  "><span class="text-center">Đặt lịch giữ chỗ</span></div>
+            <div class="main-screen">
+                <div class="main-screen__block main-screen__block--active" id="salonAttributeId">
+                    <div class="first-item"></div>
+                    <div class="font-medium text-lg mb-3">1. Chọn salon</div>
+                    <div class="bot-message "><img src="/static/media/bot_avatar_1654_1.26e1da41.jpg" alt="">
+                        <div class="content">
+                            <p>Đầu tiên anh chọn “Tìm salon gần anh” ở ngay bên dưới để tìm Salon thuận tiện nhất nhé!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cursor-pointer flex item-center bg-f7f7f7 h-11 rounded px-2.5 " aria-hidden="true">
+                        <div class="relative mr-2.5 lg:mr-3.5"><img src="/static/media/homeOutline.76facfa5.svg" alt="">
+                            <div class="absolute flex h-2 w-2 -right-2 -top-0">
+                                <div
+                                    class="ping-fast absolute inline-flex h-full w-full rounded-full bg-red-ea1601 opacity-75 h-2 w-2">
+                                </div>
+                                <div class="relative inline-flex rounded-full h-2 w-2 bg-red-ea1601"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="pr-0.5 overflow-hidden whitespace-nowrap overflow-ellipsis w-full text-sm color-a3a3a3">
+                            Xem tất cả salon</div>
+                        <div class="ml-auto w-2.5"><img src="/static/media/caretRight.b0d191b3.svg" alt=""></div>
+                    </div>
+                    <div class="block__wrapper">
+                        <div class="wrapper__swiper">
+                            <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                                    <div class="swiper-slide swiper__salon buttonSalonNear swiper-slide-active"
+                                        role="presentation" style="margin-right: 10px;"><img
+                                            src="/static/media/navigate-booking.a322957e.svg" alt=""
+                                            class="list-address__icon" style="width: 20px;"><span
+                                            class="list-address__text">Tìm salon gần anh</span></div>
+                                </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-screen__block " id="serviceAttributeId">
+                    <div class="next-item"></div>
+                    <div class="font-medium text-lg mb-3">2. Chọn dịch vụ</div>
+                    <div class="cursor-pointer flex item-center bg-f7f7f7 h-11 rounded px-2.5 " aria-hidden="true">
+                        <div class="relative mr-2.5 lg:mr-3.5"><img src="/static/media/service.3a62b101.svg" alt="">
+                        </div>
+                        <div
+                            class="pr-0.5 overflow-hidden whitespace-nowrap overflow-ellipsis w-full text-sm color-a3a3a3">
+                            Xem tất cả dịch vụ hấp dẫn</div>
+                        <div class="ml-auto w-2.5"><img src="/static/media/caretRight.b0d191b3.svg" alt=""></div>
+                    </div>
+                    <div class="block__box"></div>
+                </div>
+                <div class="main-screen__block ">
+                    <div class="next-item"></div>
+                    <div class="block" id="service-time">
+                        <div class="font-medium text-lg mb-3">3. Chọn ngày, giờ &amp; stylist</div>
+                        <div class="block__box">
+                            <div class="relative" id="datebookId">
+                                <div class="cursor-pointer flex item-center bg-f7f7f7 h-11 rounded px-2.5 "
+                                    aria-hidden="true">
+                                    <div class="relative mr-2.5 lg:mr-3.5"><img
+                                            src="/static/media/calendar-2.3c77d299.svg" alt=""></div>
+                                    <div
+                                        class="pr-0.5 overflow-hidden whitespace-nowrap overflow-ellipsis w-full text-sm color-111111">
+                                        <div class="w-full flex space-between item-center">
+                                            <div><span>Hôm nay, </span><span class="">T2 </span>(31/10)</div>
+                                        </div>
+                                    </div>
+                                    <div class="ml-auto w-2.5"><img src="/static/media/caretRight.b0d191b3.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="filter drop-shadow bg-white absolute top-11 w-full z-20 opacity-0 "></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="new-affix-v2">
+                <div class="flex space-between text-center content-step time-line ">
+                    <div class="right button-next pointer btn-inactive" role="presentation"><span>Hoàn tất</span></div>
+                    <span class="sub-description">Cắt xong trả tiền, huỷ lịch không sao</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
