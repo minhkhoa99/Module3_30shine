@@ -16,7 +16,7 @@ server.use(express.static("public"));
 dotenv.config();
 
 server.get("/", (req, res) => {
-  res.render("dashboard");
+  res.render("muaban1");
 });
 const connected = () => {
   mongoose

@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+.project {
+  height: auto;
+  width: 100%;
+  /* border: 1px solid black ; */
+}
+.logo-30shine img {
+  margin-left: 50px;
+  margin-top: 15px;
+  height: 70px;
+  width: 100px;
+}
+.search {
+  margin-top: -50px;
+  margin-left: 50%;
+  display: flex;
+}
+.search-item {
+  width: 40%;
+  height: 40px;
+  border-radius: 0 5px 5px 0;
+  border-color: aliceblue;
+}
+.tim-kiem {
+  width: 80px;
+  height: 40px;
+  border: 1px solid rgb(173, 170, 170);
+  border-radius: 5px 0 0 5px;
+  font-size: 15px;
+  background: rgb(230, 224, 224);
+  text-align: center;
+  padding-top: 8px;
+}
+.btn {
+  width: 170px;
+  height: 40px;
+  border: 1px solid rgb(173, 170, 170);
+  background: rgb(228, 253, 6);
+  font-size: 15px;
+  padding-top: 8px;
+  margin-left: 20px;
+}
+.btn img {
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+.btn_icon-cart {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+  border-radius: 50%;
+  font-size: 30px;
+  border: none;
+}
+.tools-1 {
+  display: flex;
+  list-style: none;
+  background: rgb(253, 250, 250);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*             đơn hàng          */
+.oder {
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+.oder_buying {
+  display: flex;
+}
+.oder_buying-1 {
+  border: 1px solid rgb(255, 249, 249);
+  margin-left: 10px;
+  width: 30%;
+  box-shadow: 5px;
+}
+.oder_buying-2 {
+  /* border: 1px solid rgb(179, 255, 0); */
+  width: 45%;
+}
+.pay {
+  width: 22%;
+  /* border: 1px solid rgb(255, 0, 242); */
+  margin-right: 10px;
+}
+.oder_buying-1-img {
+  width: 70px;
+  height: 50px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+.oder_buying-1-img:hover {
+  cursor: pointer;
+}
+
+.oder_buying-2 h2 {
+  margin-left: 20px;
+}
+.oder_buying-2-icon-1 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.fill-current {
+  width: 15px;
+  height: 15px;
+}
+.oder_buying-2-icon-2 {
+  color: red;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+/*  tinh toan   */
+.table2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.table2-1 {
+  padding-left: 20px;
+  margin-top: 20px;
+  color: red;
+}
+.table2 {
+  margin-top: 20px;
+}
+.soluong {
+  font-size: 20px;
+}
+.table2 .media .tong {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  line-height: 7px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.tong:hover {
+  background: rgb(4, 255, 4);
+}
+
+.oder .oder1 span {
+  margin-right: 20px;
+  float: right;
+  color: red;
+  font-size: 24px;
+  line-height: 17px;
+}
+
+.oder .oder2 {
+  background-color: #000;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.oder_manh-h5 {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.oder_manh-p {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.hotline {
+  margin-left: 20px;
+  font-size: 30px;
+  color: red;
+}
+.list-group-item:hover {
+  cursor: pointer;
+  background: yellow;
+}
+
+/*                    ket thúc               */
+
+.final {
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 20px;
+  list-style: none;
+  color: white;
+  background: black;
+  border-bottom: 1px solid rgb(156, 152, 152);
+}
+.final-1 {
+  width: 33%;
+  border: 1px solid black;
+}
+.final-1-2_img-1 {
+  width: 130px;
+  height: 60px;
+  margin-left: 10px;
+}
+.final-1-2_img-2 {
+  width: 130px;
+  height: 45px;
+  margin-left: 10px;
+}
+.final-1-2:hover {
+  cursor: pointer;
+}
+.final-1-3 {
+  margin-left: 15px;
+}
+
+.final-2 {
+  width: 30%;
+  /* border: 1px solid red; */
+}
+.final-2-1 li:hover {
+  cursor: pointer;
+  color: yellow;
+}
+
+.final-3 {
+  width: 33%;
+  /* border: 1px solid yellow; */
+}
+
+.final-3-2 img {
+  width: 130px;
+  height: 40px;
+  margin-top: 30px;
+}
+.final-3-2 img:hover {
+  cursor: pointer;
+}
+.final-3-3_dathang {
+  font-size: 20px;
+  color: rgb(245, 202, 11);
+}
+.final-3-3 {
+  margin-top: 30px;
+}
+.final-3-3_hotline {
+  border: 1px solid rgb(245, 202, 11);
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.fone-zine-1 {
+  font-size: 20px;
+}
+
+.the-end-bye {
+  background: black;
+  color: white;
+  height: 40px;
+}
+
+.the-end-bye span {
+  margin-left: 30px;
+}
