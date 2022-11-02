@@ -16,7 +16,7 @@ server.use(express.static("public"));
 dotenv.config();
 
 server.get("/", (req, res) => {
-  res.render("schedule");
+  res.render("dashboard");
 });
 const connected = () => {
   mongoose
