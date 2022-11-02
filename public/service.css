@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.booking-single-screen{
+    width: 38%;
+    border: 1px solid black;
+    /* display: flex; */
+    margin-left: 30%;
+}
+.booking-single-screen-1{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.booking-single-screen-1-img{
+    /* border: 1px solid red; */
+    padding-left: 20px;
+}
+.booking-single-screen-1-img:hover{
+    cursor: pointer;
+}
+.booking-single-screen-1-1{
+    margin-left: 30px;
+    display: flex;
+    text-align: center;
+    /* border: 1px solid red; */
+    font-size: 23px;
+    align-content: center;
+    align-items: center;
+    margin-left: 120px;
+}
+.booking-single-screen-1-quy{
+    /* border: 1px solid red; */
+    padding-left: 170px;
+}   
