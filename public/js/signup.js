@@ -27,7 +27,7 @@ form.addEventListener("submit", (e) => {
       password == "" ||
       (telephone == "" && password == "" && name == "")
     ) {
-      messages.innerHTML = `<div class = "alert alert-danger">Tên hoặc SĐT hoặc mật khẩu không được để trống</div>`;
+      messages.innerHTML = `<div class = "alert alert-danger" >Tên hoặc SĐT hoặc mật khẩu không được để trống</div>`;
     }
   }
   let data = {
@@ -51,7 +51,7 @@ form.addEventListener("submit", (e) => {
 
         setTimeout(() => {
           window.location.href = "/";
-        }, 2000);
+        }, 1000);
       }
     })
     .catch((err) => {

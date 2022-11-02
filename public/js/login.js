@@ -20,7 +20,7 @@ form.addEventListener("submit", (e) => {
     (telephone == "" && password == "")
   ) {
     message.innerHTML = `<div class = "alert alert-danger">SĐT hoặc mật khẩu không được để trống</div>`;
-  } else if (!telephone == "" || !password == "") {
+  } else if (!telephone !== "" || !password !== "") {
     message.innerHTML = `<div class = "alert alert-danger">Số điện thoại hoặc mật khẩu không chính xác</div>`;
   }
 
