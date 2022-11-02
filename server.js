@@ -6,17 +6,37 @@ import dotenv from "dotenv";
 import ejs from "ejs";
 import morgan from "morgan";
 import bodyParser from "body-parser";
-
+import userRoutes from "./routes/user.js";
+import authRoutes from "./routes/auth.js";
+import cookieParser from "cookie-parser";
+import { notRequireAuth } from "./ventyfiToken.js";
 const server = express();
 server.set("view engine", "ejs");
 server.set("vies", `/views`);
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.static("public"));
+
 dotenv.config();
 
-server.get("/", (req, res) => {
-  res.render("muaban1");
+server.use(morgan("dev"));
+server.use(cookieParser(""));
+server.use(express.json());
+server.use("/", userRoutes);
+server.use("/", notRequireAuth, authRoutes);
+
+server.use((err, req, res, next) => {
+  if (err.status === 500) {
+    const status = err.status || 500;
+    const message = err.message || "Something went wrong!";
+
+    return res.status(status).json({
+      success: false,
+      status,
+      message,
+    });
+  }
+  next();
 });
 const connected = () => {
   mongoose
