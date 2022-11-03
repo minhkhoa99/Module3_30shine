@@ -114,13 +114,23 @@
                 <div class="activity-data">
                     <div class="data names">
                         <span class="data-title">Tên Khách Hàng</span>
-                        <span class="data-list">Prem Shahi</span>
-                        <span class="data-list">Deepa Chand</span>
-                        <span class="data-list">Manisha Chand</span>
-                        <span class="data-list">Pratima Shahi</span>
-                        <span class="data-list">Man Shahi</span>
-                        <span class="data-list">Ganesh Chand</span>
-                        <span class="data-list">Bikash Chand</span>
+
+
+                        <% user.forEach(element=> { %>
+                            <span class="data-list">
+                                <%=element.name %>
+                            </span>
+                            <span class="data-list">Deepa Chand</span>
+                            <span class="data-list">Manisha Chand</span>
+                            <span class="data-list">Pratima Shahi</span>
+                            <span class="data-list">Man Shahi</span>
+                            <span class="data-list">Ganesh Chand</span>
+                            <span class="data-list">Bikash Chand</span>
+                            <% }) %>
+
+
+
+
                     </div>
                     <div class="data email">
                         <span class="data-title">Số điện thoại</span>

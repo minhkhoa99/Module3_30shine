@@ -35,7 +35,16 @@ export const signinAdmin = async (req, res, next) => {
     next(err);
   }
 };
-
+//render username
+export const renderUsername = (req, res, next) => {
+  user
+    .find({})
+    .then((user) => {
+      user = user.map((user) => user.toObject());
+      res.render("dashboardAdmin", { user });
+    })
+    .catch(next);
+};
 //dashboard admin
 export const adminDashboard = (req, res) => {
   res.render("dashboardAdmin");
@@ -52,18 +61,4 @@ export const renderProduct = (req, res) => {
 //combo
 export const renderCombo = (req, res) => {
   res.render("updataCombo");
-};
-
-export const renderUsername = (req, res, next) => {
-  user.find({}, (err, user) => {
-    if (err) return res.status(404).json({ message: "err" });
-    let userData = user.map((user) => {
-      return user.toObject();
-    });
-
-    res.render("dashboardAdmin", {
-      userList: userData,
-    });
-    console.log(userData);
-  });
 };
