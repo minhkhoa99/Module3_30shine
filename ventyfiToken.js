@@ -16,6 +16,13 @@ export const notRequireAuth = (req, res, next) => {
     next();
   }
 };
+export const requireAuthAdmin = (req, res, next) => {
+  if (Object.keys(req.cookies).length !== 0) {
+    res.redirect("/admin/dashboard");
+  } else {
+    next();
+  }
+};
 
 // export const showMessage = (status, message) => {
 //   let messageContainer = document.getElementsByClassName("message")[0];

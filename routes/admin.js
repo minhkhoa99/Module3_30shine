@@ -7,7 +7,7 @@ import {
   renderCombo,
 } from "../controllers/admin.js";
 import express from "express";
-
+import { requireAuthAdmin } from "../ventyfiToken.js";
 const router = express.Router();
 //getdashboad Signin
 router.get("/signin", dashSignin);

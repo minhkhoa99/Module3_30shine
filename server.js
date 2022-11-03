@@ -11,7 +11,7 @@ import authRoutes from "./routes/auth.js";
 import shopRoutes from "./routes/shop.js";
 import adminRoutes from "./routes/admin.js";
 import cookieParser from "cookie-parser";
-import { notRequireAuth } from "./ventyfiToken.js";
+import { notRequireAuth, requireAuthAdmin } from "./ventyfiToken.js";
 import cors from "cors";
 const server = express();
 server.set("view engine", "ejs");
@@ -27,7 +27,7 @@ server.use(morgan("dev"));
 server.use(cookieParser(""));
 server.use(express.json());
 server.use("/", userRoutes);
-server.use("/", notRequireAuth, authRoutes);
+server.use("/", authRoutes);
 server.use("/", shopRoutes);
 server.use("/admin", adminRoutes);
 server.use((err, req, res, next) => {

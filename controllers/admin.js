@@ -4,6 +4,7 @@ import User from "../model/user.js";
 import { createError } from "../error.js";
 import Jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import user from "../model/user.js";
 
 // signin danh cho admin tim kiem ten dang nhap
 export const dashSignin = (req, res) => {
@@ -51,4 +52,18 @@ export const renderProduct = (req, res) => {
 //combo
 export const renderCombo = (req, res) => {
   res.render("updataCombo");
+};
+
+export const renderUsername = (req, res, next) => {
+  user.find({}, (err, user) => {
+    if (err) return res.status(404).json({ message: "err" });
+    let userData = user.map((user) => {
+      return user.toObject();
+    });
+
+    res.render("dashboardAdmin", {
+      userList: userData,
+    });
+    console.log(userData);
+  });
 };
