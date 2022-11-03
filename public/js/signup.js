@@ -52,6 +52,8 @@ form.addEventListener("submit", (e) => {
         setTimeout(() => {
           window.location.href = "/";
         }, 1000);
+      } else if (data.status == "fail") {
+        messages.innerHTML = `<div class = "alert alert-danger">${data.message}</div>`;
       }
     })
     .catch((err) => {

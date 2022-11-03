@@ -11,12 +11,14 @@ import authRoutes from "./routes/auth.js";
 import shopRoutes from "./routes/shop.js";
 import cookieParser from "cookie-parser";
 import { notRequireAuth } from "./ventyfiToken.js";
+import cors from "cors";
 const server = express();
 server.set("view engine", "ejs");
 server.set("vies", `/views`);
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.static("public"));
+server.use(cors());
 
 dotenv.config();
 

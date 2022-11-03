@@ -436,9 +436,7 @@ img {
   font-weight: 700 !important;
   display: none !important;
 }
-.list-groupItem {
-  display: none !important;
-}
+
 .booking-content {
   display: flex;
   margin-left: 10px;

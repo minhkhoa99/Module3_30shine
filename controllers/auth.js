@@ -17,27 +17,35 @@ export const signup = async (req, res, next) => {
       .status(200)
       .json({ status: "success", message: "User created successfully" });
   } catch (err) {
-    // next(err);
-    console.log(err);
+    res
+      .status(500)
+      .json({
+        status: "fail",
+        message: "SĐT hoặc tên bị trùng vui lòng nhập lại",
+      });
   }
 };
 
 export const signin = async (req, res, next) => {
+  console.log("Hello world");
   try {
     //tim kiem user bang findOne()
     const user = await User.findOne({ telephone: req.body.telephone });
-    console.log(req.body.telephone);
+    console.log(user);
     if (!user) return next(createError(404, "User not found!"));
     const isConrrect = await bcrypt.compare(req.body.password, user.password);
+    console.log("is correct", isConrrect);
 
     if (!isConrrect) return next(createError(400, "Wrong createdentials!"));
     //su dung jsonwebtoken tro toi id trong db lay ve id
+    console.log(process.env.JWT);
     const token = Jwt.sign({ id: user._id }, process.env.JWT);
     //lay ra object user id co password trung voi user da duoc tao
     //truyen xuong res.cookies()
+    console.log("token", token);
     const { password, ...others } = user._doc;
     //tao cookie connect thanh cong
-
+    console.log("Before response");
     res
       .cookie("access_token", token, {
         httpOnly: true,
