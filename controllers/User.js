@@ -14,3 +14,7 @@ export const dashboard = (req, res) => {
 export const signup = (req, res) => {
   res.render("signup");
 };
+
+export const clientSchedule = (req, res) => {
+  res.render("clientSchedule");
+};

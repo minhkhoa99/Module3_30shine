@@ -9,6 +9,7 @@ import bodyParser from "body-parser";
 import userRoutes from "./routes/user.js";
 import authRoutes from "./routes/auth.js";
 import shopRoutes from "./routes/shop.js";
+import adminRoutes from "./routes/admin.js";
 import cookieParser from "cookie-parser";
 import { notRequireAuth } from "./ventyfiToken.js";
 import cors from "cors";
@@ -28,9 +29,7 @@ server.use(express.json());
 server.use("/", userRoutes);
 server.use("/", notRequireAuth, authRoutes);
 server.use("/", shopRoutes);
-server.get("/admin", (req, res) => {
-  res.render("clientSchedule");
-});
+server.use("/admin", adminRoutes);
 server.use((err, req, res, next) => {
   if (err.status === 500) {
     const status = err.status || 500;
