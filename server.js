@@ -28,7 +28,9 @@ server.use(express.json());
 server.use("/", userRoutes);
 server.use("/", notRequireAuth, authRoutes);
 server.use("/", shopRoutes);
-
+server.get("/admin", (req, res) => {
+  res.render("dashboardAdmin");
+});
 server.use((err, req, res, next) => {
   if (err.status === 500) {
     const status = err.status || 500;
