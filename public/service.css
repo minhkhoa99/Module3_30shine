@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -5,9 +6,8 @@
 }
 
 .booking-single-screen{
-    width: 38%;
-    border: 1px solid black;
-    /* display: flex; */
+    width: 40%;
+    border: none;
     margin-left: 30%;
 }
 .booking-single-screen-1{
@@ -15,10 +15,13 @@
     align-content: center;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid rgb(238, 232, 232);
+    background-color: rgb(247, 242, 242);
+    width: 100%;
+    height: 50px;
 }
 .booking-single-screen-1-img{
-    /* border: 1px solid red; */
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .booking-single-screen-1-img:hover{
     cursor: pointer;
@@ -26,14 +29,91 @@
 .booking-single-screen-1-1{
     margin-left: 30px;
     display: flex;
-    text-align: center;
-    /* border: 1px solid red; */
+
     font-size: 23px;
-    align-content: center;
-    align-items: center;
-    margin-left: 120px;
+    padding-left: 100px;
 }
 .booking-single-screen-1-quy{
     /* border: 1px solid red; */
-    padding-left: 170px;
+    padding-left: 140px;    
 }   
+
+
+.service-1{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(238, 232, 232);
+}
+.service-1:hover{
+    cursor: pointer;
+}
+
+.service-2-1{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 10px;
+    background: rgb(226, 247, 247);
+    border: 1px solid 0.5px rgb(235, 232, 232)
+}
+
+.service-2 img{
+    width: 55px;
+    height: 55px;
+    border-radius: 5px;
+}
+.service-2-2-1{
+    font-weight: 900;
+}
+.service-2-2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.service-3-1{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-top: 20px;
+}
+
+.sokai{
+    font-weight: 900;
+    margin-top: 20px;
+}
+.service-3-1-1 p{
+    margin-top: 20px;
+    font-weight: 100;
+}
+.service-3-1-1 img{
+    width: 250px;
+    border-radius: 7px;
+}
+.nedan{
+    margin-top: 20px;
+    font-weight: 900;
+}
+.service-3-button{
+    display: flex;
+    justify-content: center;
+}
+.service-3 button{
+    width: 150px;
+    height: 30px;
+   border-radius: 5px;
+   border: 0.25px solid rgb(240, 238, 238);
+}
+.service-3 button:hover{
+    cursor: pointer;
+    background: yellow;
+} 
