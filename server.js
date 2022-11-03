@@ -8,6 +8,7 @@ import morgan from "morgan";
 import bodyParser from "body-parser";
 import userRoutes from "./routes/user.js";
 import authRoutes from "./routes/auth.js";
+import shopRoutes from "./routes/shop.js";
 import cookieParser from "cookie-parser";
 import { notRequireAuth } from "./ventyfiToken.js";
 const server = express();
@@ -24,6 +25,7 @@ server.use(cookieParser(""));
 server.use(express.json());
 server.use("/", userRoutes);
 server.use("/", notRequireAuth, authRoutes);
+server.use("/", shopRoutes);
 
 server.use((err, req, res, next) => {
   if (err.status === 500) {
