@@ -456,3 +456,14 @@ nav.close ~ .dashboard .top {
     width: 100%;
   }
 }
+.flex-btn {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.delete-btn {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid;
+}

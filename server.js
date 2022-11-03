@@ -29,7 +29,7 @@ server.use("/", userRoutes);
 server.use("/", notRequireAuth, authRoutes);
 server.use("/", shopRoutes);
 server.get("/admin", (req, res) => {
-  res.render("dashboardAdmin");
+  res.render("adminSchedule");
 });
 server.use((err, req, res, next) => {
   if (err.status === 500) {

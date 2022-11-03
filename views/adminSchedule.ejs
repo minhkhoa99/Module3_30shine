@@ -1,15 +1,154 @@
 <!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/dashboardAdmin.css">
+
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Admin Dashboard</title>
 </head>
 
 <body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="https://vnpayqr.vn/wp-content/uploads/2020/08/30shine-logo.png" alt="">
+            </div>
 
+            <span class="logo_name">30ShineAdmin</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Trang chủ</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-files-landscapes"></i>
+                        <span class="link-name">Quản lý đặt lịch</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-chart"></i>
+                        <span class="link-name">Quản lý sản phẩm</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="link-name">Hành trình toả sáng</span>
+                    </a></li>
+
+            </ul>
+
+            <ul class="logout-mode">
+                <li><a href="#">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name">Logout</span>
+                    </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+
+                    <div class="mode-toggle">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+
+            <img src="images/profile.jpg" alt="">
+        </div>
+
+        <div class="dash-content">
+
+
+            <div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Quản lý đặt lịch</span>
+                </div>
+
+                <div class="activity-data">
+                    <div class="data names">
+                        <span class="data-title">id</span>
+
+                        <span class="data-list">1</span>
+                    </div>
+                    <div class="data email">
+                        <span class="data-title">Số điện thoại</span>
+                        <span class="data-list">0934595049</span>
+
+                    </div>
+                    <div class="data email">
+                        <span class="data-title">Tên</span>
+                        <span class="data-list">Phú</span>
+
+                    </div>
+                    <div class="data joined">
+                        <span class="data-title">Đã tạo</span>
+                        <span class="data-list">2022-02-12</span>
+
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Giờ hẹn</span>
+                        <span class="data-list">New</span>
+
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Lựa chọn dịch vụ</span>
+                        <span class="data-list">New</span>
+
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Salon gần nhất</span>
+                        <span class="data-list">New</span>
+
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Option</span>
+                        <div class="flex-btn">
+                            <span class="data-list">
+                                <button class="delete-btn" id="deletebtn">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                </button>
+                            </span>
+                            <span class="data-list">
+                                <button class="delete-btn" id="updatebtn">
+                                    <ion-icon name="settings-outline"></ion-icon>
+                                </button>
+                            </span>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/scriptDashAdmin.js"></script>
 </body>
 
 </html>
