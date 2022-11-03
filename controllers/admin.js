@@ -29,7 +29,7 @@ export const signinAdmin = async (req, res, next) => {
         httpOnly: true,
       })
       .status(200)
-      .json(others);
+      .json({ others, status: "success" });
   } catch (err) {
     next(err);
   }
