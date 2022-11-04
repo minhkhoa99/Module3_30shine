@@ -16,5 +16,5 @@ router.delete("/hanh-trinh-toa-sang", clientSchedule);
 
 router.get("/signup", notRequireAuth, signup);
 
-router.get("/", datlich);
+router.get("/datlich", datlich);
 export default router;

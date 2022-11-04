@@ -30,9 +30,7 @@ server.use("/", userRoutes);
 server.use("/", authRoutes);
 server.use("/", shopRoutes);
 server.use("/admin", adminRoutes);
-server.get("/datlich", (req, res) => {
-  res.render("datlich");
-});
+
 server.use((err, req, res, next) => {
   if (err.status === 500) {
     const status = err.status || 500;

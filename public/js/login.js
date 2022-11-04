@@ -1,8 +1,9 @@
 let apiLogin = "http://localhost:3000";
 const form = document.getElementById("formlogin");
 const btnLogin = document.querySelector(".btn-continue");
-const btnLogout = document.querySelector(".btn-logout");
+const btnLogout = document.getElementById("btn-logout");
 const message = document.querySelector(".message");
+
 console.log(form);
 form.addEventListener("submit", (e) => {
   e.preventDefault();

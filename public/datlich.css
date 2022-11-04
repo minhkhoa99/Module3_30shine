@@ -3,10 +3,12 @@
   padding: 0px;
   box-sizing: border-box;
 }
+.calendar {
+  margin-top: 50px;
+}
 .calendar .book-calendar {
   width: 50%;
   margin: auto;
-  margin-top: 50px;
 }
 .title {
   border: 1px solid #f7f7f7;
