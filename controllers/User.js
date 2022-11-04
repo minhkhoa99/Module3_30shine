@@ -16,5 +16,7 @@ export const signup = (req, res) => {
 };
 
 export const clientSchedule = (req, res) => {
-  res.render("clientSchedule");
+  res.render("clientSchedule", {
+    userName: req.cookies.access_token,
+  });
 };

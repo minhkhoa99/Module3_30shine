@@ -18,26 +18,39 @@ router.post("/signin", signinAdmin);
 router.get("/dashboard", renderUsername);
 //post
 router.post("/dashboard");
+//put
+router.post("/dashboard");
+
 //delete
 router.delete("/dashboard");
 
 //get adminschdule
 router.get("/quan-ly-dat-lich", renderSchedule);
 //post
-router.post("/quan-ly-dat-lich", renderSchedule);
+router.post("/quan-ly-dat-lich");
+//put
+router.put("/quan-ly-dat-lich");
+
 //delete
-router.delete("/quan-ly-dat-lich", renderSchedule);
+router.delete("/quan-ly-dat-lich");
 //get updateproduct
 router.get("/san-pham", renderProduct);
 //post
-router.post("/san-pham", renderProduct);
+router.post("/san-pham");
+//put
+router.post("/san-pham");
+
 //delete
-router.delete("/san-pham", renderProduct);
+router.delete("/san-pham");
 
 //get hanh trinh toa sang
 router.get("/hanh-trinh-toa-sang", renderCombo);
 //post
-router.post("/hanh-trinh-toa-sang", renderCombo);
+router.post("/hanh-trinh-toa-sang");
+//put
+
+router.put("/hanh-trinh-toa-sang");
+
 //delete
-router.delete("/hanh-trinh-toa-sang", renderCombo);
+router.delete("/hanh-trinh-toa-sang");
 export default router;

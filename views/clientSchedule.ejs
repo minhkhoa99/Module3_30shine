@@ -6,6 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dashboard.css">
+    <link rel="stylesheet" href="/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owl.theme.default.min.css">
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="/dashboardAdmin.css">
@@ -13,81 +17,86 @@
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Admin Dashboard</title>
+    <title>ClientDashboard</title>
 </head>
 
 <body>
+    <%-include("header")%>
 
-    <section class="dashboard">
+        <section class="dashboard dashboard-schedule">
 
-
-
-
-        <div class="dash-content">
-
-
-            <div class="activity">
-                <div class="title">
-                    <i class="uil uil-clock-three"></i>
-                    <span class="text">Hành trình toả sáng</span>
-                </div>
-
-                <div class="activity-data">
-                    <div class="data names">
-                        <span class="data-title">id</span>
-
-                        <span class="data-list">1</span>
+            <div class="dash-content">
+                <div class="activity">
+                    <div class="title">
+                        <i class="uil uil-clock-three"></i>
+                        <span class="text">Hành trình toả sáng</span>
                     </div>
-                    <div class="data email">
-                        <span class="data-title">Số điện thoại</span>
-                        <span class="data-list">0934595049</span>
 
-                    </div>
-                    <div class="data email">
-                        <span class="data-title">Tên</span>
-                        <span class="data-list">Phú</span>
+                    <div class="activity-data">
+                        <div class="data names">
+                            <span class="data-title">id</span>
 
-                    </div>
-                    <div class="data joined">
-                        <span class="data-title">Đã tạo</span>
-                        <span class="data-list">2022-02-12</span>
+                            <span class="data-list">1</span>
+                        </div>
+                        <div class="data email">
+                            <span class="data-title">Số điện thoại</span>
+                            <span class="data-list">0934595049</span>
 
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Giờ hẹn</span>
-                        <span class="data-list">New</span>
+                        </div>
+                        <div class="data email">
+                            <span class="data-title">Tên</span>
+                            <span class="data-list">Phú</span>
 
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Lựa chọn dịch vụ</span>
-                        <span class="data-list">New</span>
+                        </div>
+                        <div class="data joined">
+                            <span class="data-title">Đã tạo</span>
+                            <span class="data-list">2022-02-12</span>
 
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Salon gần nhất</span>
-                        <span class="data-list">New</span>
+                        </div>
+                        <div class="data type">
+                            <span class="data-title">Giờ hẹn</span>
+                            <span class="data-list">New</span>
 
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Option</span>
-                        <div class="flex-btn">
-                            <span class="data-list">
-                                <button class="delete-btn" id="deletebtn">
-                                    <ion-icon name="trash-outline"></ion-icon>
-                                </button>
-                            </span>
+                        </div>
+                        <div class="data type">
+                            <span class="data-title">Lựa chọn dịch vụ</span>
+                            <span class="data-list">New</span>
 
+                        </div>
+                        <div class="data type">
+                            <span class="data-title">Salon gần nhất</span>
+                            <span class="data-list">New</span>
+
+                        </div>
+                        <div class="data type">
+                            <span class="data-title">Option</span>
+                            <div class="flex-btn">
+                                <span class="data-list">
+                                    <button class="delete-btn" id="deletebtn">
+                                        <ion-icon name="trash-outline"></ion-icon>
+                                    </button>
+                                </span>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <%-include("footer")%>
-
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="/js/scriptDashAdmin.js"></script>
+        </section>
+        <%-include("footer")%>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+                integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+                integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+                integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+                crossorigin="anonymous"></script>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <script src="/jsAdmin/adminSchedule.js"></script>
+            <script src="/js/login.js"></script>
 </body>
 
 </html>
