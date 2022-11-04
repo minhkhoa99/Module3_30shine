@@ -1,4 +1,4 @@
-const mysql = require("mysql2");
+import mysql from "mysql2";
 
 let pool = mysql.createPool({
   host: "localhost",
@@ -7,4 +7,6 @@ let pool = mysql.createPool({
   password: "kolako2313",
 });
 
-module.exports = pool.promise();
+let db = pool.promise();
+
+export default db;

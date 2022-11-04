@@ -11,6 +11,7 @@ import authRoutes from "./routes/auth.js";
 import shopRoutes from "./routes/shop.js";
 import cookieParser from "cookie-parser";
 import { notRequireAuth } from "./ventyfiToken.js";
+import db from "./model/db.js";
 import cors from "cors";
 const server = express();
 server.set("view engine", "ejs");
@@ -31,6 +32,20 @@ server.use("/", shopRoutes);
 server.get("/vitri", (req, res) => {
   res.render("vitri");
 });
+server.get("/datlich", (req, res) => {
+  let { step } = req.query;
+  if (step == 0) {
+    res.render("datlich");
+  } else if (step == 1) {
+    db.execute(`SELECT * FROM wcp_shop`).then((data) => {
+      let rows = data[0];
+      res.render("vitri", {
+        data: rows,
+      });
+    });
+  }
+});
+
 server.use((err, req, res, next) => {
   if (err.status === 500) {
     const status = err.status || 500;
@@ -42,7 +57,7 @@ server.use((err, req, res, next) => {
       message,
     });
   }
-  next();
+  !next();
 });
 const connected = () => {
   mongoose
