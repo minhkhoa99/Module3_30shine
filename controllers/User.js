@@ -20,3 +20,9 @@ export const clientSchedule = (req, res) => {
     userName: req.cookies.access_token,
   });
 };
+
+export const datlich = (req, res) => {
+  res.render("datlich", {
+    userName: req.cookies.access_token,
+  });
+};
