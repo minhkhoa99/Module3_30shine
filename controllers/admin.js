@@ -36,19 +36,26 @@ export const signinAdmin = async (req, res, next) => {
   }
 };
 //render username
-export const renderUsername = (req, res, next) => {
-  user
-    .find({})
-    .then((user) => {
-      user = user.map((user) => user.toObject());
-      res.render("dashboardAdmin", { user });
-    })
-    .catch(next);
+export const renderUsername = async (req, res, next) => {
+  user.find({}, (err, user) => {
+    if (err) {
+      res.send("something went really wrong");
+      next();
+    } else {
+      let usersData = user.map((user) => user.toObject());
+      console.log(
+        new Date(usersData[0].createdAt).toISOString().substring(0, 20)
+      );
+      res.render("dashboardAdmin", {
+        userList: usersData,
+      });
+    }
+  });
 };
 //dashboard admin
-export const adminDashboard = (req, res) => {
-  res.render("dashboardAdmin");
-};
+// export const adminDashboard = (req, res) => {
+//   res.render("dashboardAdmin");
+// };
 
 //quanly dat lich
 export const renderSchedule = (req, res) => {

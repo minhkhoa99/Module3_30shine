@@ -105,52 +105,56 @@
                 </div>
             </div>
 
+
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Recent Activity</span>
+                    <span class="text">Đã tạo gần đây</span>
                 </div>
 
                 <div class="activity-data">
+                    <!-- <thead>
+                        <tr class="info">
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Address</th>
+                            <th>Wallet</th>
+                            <th>Img</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead> -->
                     <div class="data names">
                         <span class="data-title">Tên Khách Hàng</span>
-
-
-                        <% user.forEach(element=> { %>
+                        <% for(let i=0;i<userList.length;i++){ %>
                             <span class="data-list">
-                                <%=element.name %>
+                                <%=userList[i].name%>
                             </span>
-                            <span class="data-list">Deepa Chand</span>
-                            <span class="data-list">Manisha Chand</span>
-                            <span class="data-list">Pratima Shahi</span>
-                            <span class="data-list">Man Shahi</span>
-                            <span class="data-list">Ganesh Chand</span>
-                            <span class="data-list">Bikash Chand</span>
-                            <% }) %>
 
+                            <% } %>
 
 
 
                     </div>
                     <div class="data email">
                         <span class="data-title">Số điện thoại</span>
-                        <span class="data-list">premshahi@gmail.com</span>
-                        <span class="data-list">deepachand@gmail.com</span>
-                        <span class="data-list">prakashhai@gmail.com</span>
-                        <span class="data-list">manishachand@gmail.com</span>
-                        <span class="data-list">pratimashhai@gmail.com</span>
-                        <span class="data-list">manshahi@gmail.com</span>
-                        <span class="data-list">ganeshchand@gmail.com</span>
+                        <% for(let i=0;i<userList.length;i++){ %>
+                            <span class="data-list">
+                                <%=userList[i].telephone%>
+                            </span>
+
+                            <% } %>
                     </div>
                     <div class="data joined">
                         <span class="data-title">Đã tạo</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-15</span>
+                        <% for(let i=0;i<userList.length;i++){ %>
+                            <span class="data-list">
+                                <%= new Date(userList[i].createdAt).toISOString().substring(0, 10) %>
+                            </span>
+
+                            <% } %>
                     </div>
 
 

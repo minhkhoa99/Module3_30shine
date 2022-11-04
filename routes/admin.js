@@ -1,10 +1,10 @@
 import {
   signinAdmin,
   dashSignin,
-  adminDashboard,
   renderProduct,
   renderSchedule,
   renderCombo,
+  renderUsername,
 } from "../controllers/admin.js";
 import express from "express";
 import { requireAuthAdmin } from "../ventyfiToken.js";
@@ -15,7 +15,7 @@ router.get("/signin", dashSignin);
 router.post("/signin", signinAdmin);
 
 //get dashboardAdmin
-router.get("/dashboard", adminDashboard);
+router.get("/dashboard", renderUsername);
 //post
 router.post("/dashboard");
 //delete
