@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 import ejs from "ejs";
 import morgan from "morgan";
 import bodyParser from "body-parser";
-import userRoutes from "./routes/user.js";
+import { userRoutes } from "./routes/user.js";
 import authRoutes from "./routes/auth.js";
 import shopRoutes from "./routes/shop.js";
 import adminRoutes from "./routes/admin.js";
