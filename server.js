@@ -34,15 +34,16 @@ server.get("/vitri", (req, res) => {
 });
 server.get("/datlich", (req, res) => {
   let { step, shopId } = req.query;
-  if (step == 0) {
+  if (step == "0") {
     if (shopId) {
+      console.log(step, shopId);
       // tien hanh query database select ra ban ghi trong shop với shopId
-      db.execute(`SELECT * FROM wcp_shop WHERE address = ?`, [id]).then(
+      db.execute(`SELECT * FROM wcp_shop WHERE id = ?`, [shopId]).then(
         (data) => {
-          let rows = data[0];
-          console.log(data[0]);
-          res.render("vitri", {
-            data: rows,
+          let [rows] = data[0];
+          console.log(rows[0]);
+          res.render("datlich", {
+            data: data[0][0],
           });
         }
       );

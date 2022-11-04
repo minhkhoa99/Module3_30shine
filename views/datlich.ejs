@@ -12,7 +12,7 @@
     <div class="calendar">
         <div class="book-calendar">
             <div class="title">ĐẶT LỊCH GIỮ CHỖ</div>
-            <div class="selection">
+            <!-- <div class="selection">
                 <p>1. Chọn salon</p>
                 <div class="btn">
                     <button class="vitri" id="vitri">
@@ -21,14 +21,18 @@
                         <div><img class="vitri-img" src="	https://30shine.com/static/media/caretRight.b0d191b3.svg" alt=""></div>
                     </button>
                 </div>
-            </div>
+            </div> -->
             <div class="selection">
                 <p>1.Chọn salon</p>
                 <div class="btn">
                     <button class="vitri" id="vitri">
-                        <div><img src="	https://30shine.com/static/media/homeOutline.76facfa5.svg" alt=""></div>
-                        <div><%= data[i].address %></div>
-                        <div><img class="vitri-img" src="https://30shine.com/static/media/caretRight.b0d191b3.svg" alt=""></div>
+                        <div><img src="https://30shine.com/static/media/homeOutline.76facfa5.svg" alt=""></div>
+                       
+                        <% if (data) { %>
+                            <div class="hello-world"><%= data.address %> </div>
+                        <% } %>
+
+                        <div><img class="vitri-img" src="	https://30shine.com/static/media/caretRight.b0d191b3.svg" alt=""></div>
                     </button>
                 </div>
             </div>
