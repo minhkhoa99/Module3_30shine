@@ -26,13 +26,14 @@
             <% for( let i = 0; i < data.length; i++ ) { %>
                 <div class="location-area-3">
                     <div class="location-area-3-1"><%= data[i].name %></div>
-                    <div class="location-area-3-2 salon" >
+                    <div id="<%= data[i].id  %>" class="location-area-3-2 salon" >
                         <img src=<%= data[i].image %> alt="">
                         <div class="location-area-2-1">
                             <p><%= data[i].address %></p>
                         </div>
                     </div>
                 </div>
+                
             <% } %>
             
 

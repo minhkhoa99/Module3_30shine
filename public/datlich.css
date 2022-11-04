@@ -44,6 +44,9 @@
 .btn button:hover{
     cursor: pointer;
 }
+.btn{
+    margin-top: 20px;
+}
 .complete {
     border: 1px solid #f7f7f7;
     background-color: #f7f7f7;
@@ -61,4 +64,35 @@
 .complete:hover{
     cursor: pointer;
     background: yellow;
+}
+
+
+
+.vitri img{
+    width: 20px;
+    height: 20px;
+}
+.vitri{
+    display: flex;
+}
+
+.vitri div{
+    color: rgb(184, 180, 180);
+    font-size: 15px;
+    margin-left: 15px;
+    display: flex;
+    margin-top: 10px;
+}
+.vitri-img{
+    width: 15px;
+    height: 15px;
+    margin-left: 400px;
+}
+
+
+.selection-1{
+    margin-top: 50px;
+}
+.selection-1-1{
+    
 }

@@ -33,12 +33,19 @@ server.get("/vitri", (req, res) => {
   res.render("vitri");
 });
 server.get("/datlich", (req, res) => {
-  let { step } = req.query;
+  let { step, shopId } = req.query;
   if (step == 0) {
-    res.render("datlich");
+    if (shopId) {
+      // tien hanh query database select ra ban ghi trong shop với shopId
+      // Sau do lay ra duoc du lieu cua shop voi shop ID
+      // tien hanh render ra trang datlich.ejs va truyen data là shop data vào và thay thế tên shop
+    } else {
+      res.render("datlich");
+    }
   } else if (step == 1) {
     db.execute(`SELECT * FROM wcp_shop`).then((data) => {
       let rows = data[0];
+      console.log(data[0]);
       res.render("vitri", {
         data: rows,
       });
