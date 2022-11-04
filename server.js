@@ -37,6 +37,15 @@ server.get("/datlich", (req, res) => {
   if (step == 0) {
     if (shopId) {
       // tien hanh query database select ra ban ghi trong shop với shopId
+      db.execute(`SELECT * FROM wcp_shop WHERE address = ?`, [id]).then(
+        (data) => {
+          let rows = data[0];
+          console.log(data[0]);
+          res.render("vitri", {
+            data: rows,
+          });
+        }
+      );
       // Sau do lay ra duoc du lieu cua shop voi shop ID
       // tien hanh render ra trang datlich.ejs va truyen data là shop data vào và thay thế tên shop
     } else {
