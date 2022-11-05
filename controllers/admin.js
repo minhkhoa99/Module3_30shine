@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import User from "../model/user.js";
+import Shop from "../model/shopAddress.js";
 import { createError } from "../error.js";
 import Jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
@@ -61,10 +62,42 @@ export const renderUsername = async (req, res, next) => {
 export const renderSchedule = (req, res) => {
   res.render("adminSchedule");
 };
-//san pham
-export const renderProduct = (req, res) => {
-  res.render("updataProduct");
+// san pham
+//get san pham
+export const addStore = async (req, res, next) => {
+  try {
+    Shop.find({}, (err, shop) => {
+      if (err) {
+        res.send("something went really wrong");
+        next();
+      } else {
+        let shopData = shop.map((shop) => shop.toObject());
+        console.log(
+          new Date(shopData[0].createdAt).toISOString().substring(0, 20)
+        );
+        res.render("updataProduct", {
+          shopList: shopData,
+        });
+      }
+    });
+  } catch (err) {
+    next(err);
+  }
 };
+
+//post len/admin/store
+export const postStore = async (req, res, next) => {
+  try {
+    const formData = req.body;
+    const store = new Shop(formData);
+    store.save();
+    // res.send(req.body);
+    res.redirect("/admin/san-pham");
+  } catch (err) {
+    next(err);
+  }
+};
+
 //combo
 export const renderCombo = (req, res) => {
   res.render("updataCombo");

@@ -469,3 +469,6 @@ nav.close ~ .dashboard .top {
   border-radius: 5px;
   border: 1px solid;
 }
+.data-btn {
+  display: flex;
+}

@@ -3,24 +3,19 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema(
   {
     userid: {
-      type: String,
-      required: true,
+      type: Number,
     },
     location: {
       type: String,
-      required: true,
     },
     imageUrl: {
       type: String,
-      required: true,
     },
     address: {
       type: String,
-      required: true,
     },
     description: {
       type: String,
-      required: true,
     },
   },
   { timestamps: true }
