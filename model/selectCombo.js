@@ -2,26 +2,28 @@ import mongoose from "mongoose";
 //create type user Schema (lược đồ người dùng)
 const userSchema = new mongoose.Schema(
   {
-    userid: {
+    comboid: {
       type: String,
-      required: true,
     },
 
     imageUrl: {
       type: String,
-      required: true,
     },
     title: {
       type: String,
-      required: true,
     },
     description: {
       type: String,
-      required: true,
     },
     price: {
-      type: Number,
-      required: true,
+      type: String,
+    },
+    imageStylist: {
+      type: String,
+    },
+
+    nameStylist: {
+      type: String,
     },
   },
   { timestamps: true }

@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import User from "../model/user.js";
 import Shop from "../model/shopAddress.js";
+import Combo from "../model/selectCombo.js";
 import { createError } from "../error.js";
 import Jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
@@ -109,6 +110,31 @@ export const deleteShop = async (req, res, next) => {
   }
 };
 //combo
-export const renderCombo = (req, res) => {
-  res.render("updataCombo");
+
+export const addCombo = async (req, res, next) => {
+  try {
+    Combo.find({}, (err, combo) => {
+      let comboData = combo.map((combo) => combo.toObject());
+
+      res.render("updataCombo", {
+        combo: comboData,
+      });
+    });
+  } catch (err) {
+    res.status(404).json("something went really wrong");
+    next(err);
+  }
+};
+
+//post len/admin/store
+export const postCombo = async (req, res, next) => {
+  try {
+    const formData = req.body;
+    const combo = new Combo(formData);
+    combo.save();
+    // res.send(req.body);
+    res.redirect("/admin//hanh-trinh-toa-sang");
+  } catch (err) {
+    next(err);
+  }
 };

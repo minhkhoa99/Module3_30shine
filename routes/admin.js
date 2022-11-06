@@ -4,7 +4,8 @@ import {
   renderSchedule,
   addStore,
   edit,
-  renderCombo,
+  addCombo,
+  postCombo,
   renderUsername,
   postStore,
 } from "../controllers/admin.js";
@@ -39,9 +40,9 @@ router.put("/san-pham", edit);
 router.delete("/san-pham");
 
 //get hanh trinh toa sang
-router.get("/hanh-trinh-toa-sang", renderCombo);
+router.get("/hanh-trinh-toa-sang", addCombo);
 //post
-router.post("/hanh-trinh-toa-sang");
+router.post("/combo", postCombo);
 //put
 
 router.put("/hanh-trinh-toa-sang");
