@@ -21,8 +21,16 @@ export const clientSchedule = (req, res) => {
   });
 };
 
-export const datlich = (req, res) => {
-  res.render("datlich", {
-    userName: req.cookies.access_token,
-  });
+export const datlich = async (req, res) => {
+  try {
+    let { step, userid } = req.query;
+    if (step == "0") {
+      if (userid) {
+        console.log(step, userid);
+      }
+    }
+    res.render("datlich", {
+      userName: req.cookies.access_token,
+    });
+  } catch (err) {}
 };

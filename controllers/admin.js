@@ -96,6 +96,12 @@ export const postStore = async (req, res, next) => {
 //update dang lam
 export const edit = async (req, res, next) => {
   try {
+    console.log("hehehehe");
+    console.log(req.params.id);
+    console.log(req.body);
+
+    await Shop.findByIdAndUpdate(id, { $set: req.body });
+    await Shop.save();
   } catch (err) {
     next(err);
   }
@@ -103,8 +109,12 @@ export const edit = async (req, res, next) => {
 
 export const deleteShop = async (req, res, next) => {
   try {
-    await Shop.deleteOne({ _id: req.params.userid });
-    res.redirect("/admin/san-pham");
+    await Shop.deleteOne({ _id: req.params.id });
+
+    res.status(201).json({
+      message: "delete successfully",
+      status: "success",
+    });
   } catch (err) {
     console.log(err);
   }

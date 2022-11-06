@@ -82,118 +82,94 @@
         </div>
 
         <div class="dash-content">
+            <div class="form-validate">
+                <form class="row g-3" method="POST" action="/admin/store">
+                    <h2 style="margin-top: 50px ;">Thêm mới cửa hàng</h2>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">shopid</label>
+                        <input type="text" class="form-control" name="userid" id="inputEmail4">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Vị trí</label>
+                        <input type="text" class="form-control" name="location" id="inputPassword4">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress" class="form-label">ImageUrl</label>
+                        <input type="url" class="form-control" name="imageUrl" id="inputAddress" placeholder="Nhập url">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Địa chỉ</label>
+                        <input type="text" class="form-control" name="address" id="inputAddress2"
+                            placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label">Mô tả</label>
+                        <input type="text" class="form-control" name="description" placeholder="Nhập mô tả"
+                            id="inputCity">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Thêm mới cửa hàng</button>
+                    </div>
+                </form>
+            </div>
 
-            <form class="row g-3" method="POST" action="/admin/store">
-                <h2 style="margin-top: 50px ;">Thêm mới cửa hàng</h2>
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">shopid</label>
-                    <input type="text" class="form-control" name="userid" id="inputEmail4">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Vị trí</label>
-                    <input type="text" class="form-control" name="location" id="inputPassword4">
-                </div>
-                <div class="col-6">
-                    <label for="inputAddress" class="form-label">ImageUrl</label>
-                    <input type="url" class="form-control" name="imageUrl" id="inputAddress" placeholder="Nhập url">
-                </div>
-                <div class="col-6">
-                    <label for="inputAddress2" class="form-label">Địa chỉ</label>
-                    <input type="text" class="form-control" name="address" id="inputAddress2"
-                        placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">Mô tả</label>
-                    <input type="text" class="form-control" name="description" placeholder="Nhập mô tả" id="inputCity">
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Thêm mới cửa hàng</button>
-                </div>
-            </form>
 
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
                     <span class="text">Quản lý cửa hàng</span>
                 </div>
+                <table class="table table-striped table-hover">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Vị trí</th>
+                                <th scope="col">Địa chỉ</th>
+                                <th scope="col">Hình ảnh</th>
+                                <th scope="col">Mô tả</th>
+                                <th scope="col">Option</th>
 
-                <div class="activity-data">
-                    <div class="data names">
-                        <span class="data-title">id</span>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <% for(let i=0;i<shopList.length;i++){ %>
 
-                        <% for(let i=0;i<shopList.length;i++){ %>
-                            <span class="data-list">
-                                <%=shopList[i].userid%>
-                            </span>
-
-                            <% } %>
-                    </div>
-                    <div class="data email">
-                        <span class="data-title">Vị trí</span>
-                        <% for(let i=0;i<shopList.length;i++){ %>
-                            <span class="data-list">
-                                <%=shopList[i].location%>
-                            </span>
-
-                            <% } %>
-                    </div>
-                    <div class="data email">
-                        <span class="data-title">Địa chỉ</span>
-                        <% for(let i=0;i<shopList.length;i++){ %>
-                            <span class="data-list">
-                                <%=shopList[i].address%>
-                            </span>
-
-                            <% } %>
-
-                    </div>
-
-                    <div class="data joined">
-                        <span class="data-title">Hình ảnh</span>
-                        <% for(let i=0;i<shopList.length;i++){ %>
-                            <span class="data-list">
-                                <%=(shopList[i].imageUrl).toString().substring(0,31)%>
-                            </span>
-
-                            <% } %>
-
-
-                    </div>
-
-                    <div class="data joined">
-                        <span class="data-title">Mô tả</span>
-                        <% for(let i=0;i<shopList.length;i++){ %>
-                            <span class="data-list">
-                                <%=shopList[i].description%>
-                            </span>
-
+                                    <td scope="col">
+                                        <%=shopList[i].userid%>
+                                    </td>
+                                    <td scope="col">
+                                        <%=shopList[i].location%>
+                                    </td>
+                                    <td scope="col">
+                                        <%=shopList[i].address%>
+                                    </td>
+                                    <td scope="col">
+                                        <%=(shopList[i].imageUrl).toString().substring(0,31)%>
+                                    </td>
+                                    <td scope="col">
+                                        <%=shopList[i].description%>
+                                    </td>
+                                    <td scope="col">
+                                        <span class="data-list">
+                                            <button class="delete-btn d-<%=shopList[i]._id%>" id="deletebtn">
+                                                <ion-icon name="trash-outline"></ion-icon>
+                                            </button>
+                                        </span>
+                                        <span class="data-list">
+                                            <button class="delete-btn u-<%=shopList[i]._id%>" id="updatebtn">
+                                                <ion-icon name="settings-outline"></ion-icon>
+                                            </button>
+                                        </span>
+                                    </td>
+                            </tr>
                             <% } %>
 
+                        </tbody>
+                    </table>
+                </table>
 
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Option</span>
-                        <% for(let i=0;i<shopList.length;i++){ %>
-                            <div class="flex-btn">
-                                <div class="column-btn">
-                                    <span class="data-list">
-                                        <button class="delete-btn" id="deletebtn">
-                                            <ion-icon name="trash-outline"></ion-icon>
-                                        </button>
-                                    </span>
-                                    <span class="data-list">
-                                        <button class="delete-btn" id="updatebtn">
-                                            <ion-icon name="settings-outline"></ion-icon>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                            <% } %>
-
-                    </div>
-
-
-                </div>
 
             </div>
         </div>

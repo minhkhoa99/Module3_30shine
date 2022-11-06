@@ -4,6 +4,7 @@ import {
   renderSchedule,
   addStore,
   edit,
+  deleteShop,
   addCombo,
   postCombo,
   renderUsername,
@@ -34,10 +35,10 @@ router.get("/san-pham", addStore);
 //post
 router.post("/store", postStore);
 //put
-router.put("/san-pham", edit);
+router.put("/san-pham/:id", edit);
 
 //delete
-router.delete("/san-pham");
+router.delete("/san-pham/:id", deleteShop);
 
 //get hanh trinh toa sang
 router.get("/hanh-trinh-toa-sang", addCombo);
@@ -45,8 +46,9 @@ router.get("/hanh-trinh-toa-sang", addCombo);
 router.post("/combo", postCombo);
 //put
 
-router.put("/hanh-trinh-toa-sang");
+//
+router.put("/hanh-trinh-toa-sang/:id");
 
 //delete
-router.delete("/hanh-trinh-toa-sang");
+router.delete("/hanh-trinh-toa-sang/:id");
 export default router;
