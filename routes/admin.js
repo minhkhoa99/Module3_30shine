@@ -3,6 +3,7 @@ import {
   dashSignin,
   renderSchedule,
   addStore,
+  edit,
   renderCombo,
   renderUsername,
   postStore,
@@ -32,7 +33,7 @@ router.get("/san-pham", addStore);
 //post
 router.post("/store", postStore);
 //put
-router.post("/san-pham");
+router.put("/san-pham", edit);
 
 //delete
 router.delete("/san-pham");

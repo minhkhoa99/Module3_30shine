@@ -67,20 +67,14 @@ export const renderSchedule = (req, res) => {
 export const addStore = async (req, res, next) => {
   try {
     Shop.find({}, (err, shop) => {
-      if (err) {
-        res.send("something went really wrong");
-        next();
-      } else {
-        let shopData = shop.map((shop) => shop.toObject());
-        console.log(
-          new Date(shopData[0].createdAt).toISOString().substring(0, 20)
-        );
-        res.render("updataProduct", {
-          shopList: shopData,
-        });
-      }
+      let shopData = shop.map((shop) => shop.toObject());
+
+      res.render("updataProduct", {
+        shopList: shopData,
+      });
     });
   } catch (err) {
+    res.status(404).json("something went really wrong");
     next(err);
   }
 };
@@ -98,6 +92,22 @@ export const postStore = async (req, res, next) => {
   }
 };
 
+//update dang lam
+export const edit = async (req, res, next) => {
+  try {
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const deleteShop = async (req, res, next) => {
+  try {
+    await Shop.deleteOne({ _id: req.params.userid });
+    res.redirect("/admin/san-pham");
+  } catch (err) {
+    console.log(err);
+  }
+};
 //combo
 export const renderCombo = (req, res) => {
   res.render("updataCombo");

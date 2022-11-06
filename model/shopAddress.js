@@ -4,6 +4,7 @@ const userSchema = new mongoose.Schema(
   {
     userid: {
       type: Number,
+      unique: true,
     },
     location: {
       type: String,

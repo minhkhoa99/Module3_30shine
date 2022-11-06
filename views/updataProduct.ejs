@@ -84,6 +84,7 @@
         <div class="dash-content">
 
             <form class="row g-3" method="POST" action="/admin/store">
+                <h2 style="margin-top: 50px ;">Thêm mới cửa hàng</h2>
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">shopid</label>
                     <input type="text" class="form-control" name="userid" id="inputEmail4">
@@ -146,6 +147,7 @@
                             <% } %>
 
                     </div>
+
                     <div class="data joined">
                         <span class="data-title">Hình ảnh</span>
                         <% for(let i=0;i<shopList.length;i++){ %>
@@ -157,36 +159,42 @@
 
 
                     </div>
-                    <div class="data-btn">
-                        <div class="data joined">
-                            <span class="data-title">Mô tả</span>
-                            <% for(let i=0;i<shopList.length;i++){ %>
-                                <span class="data-list">
-                                    <%=shopList[i].description%>
-                                </span>
 
-                                <% } %>
+                    <div class="data joined">
+                        <span class="data-title">Mô tả</span>
+                        <% for(let i=0;i<shopList.length;i++){ %>
+                            <span class="data-list">
+                                <%=shopList[i].description%>
+                            </span>
+
+                            <% } %>
 
 
-                        </div>
-                        <div class="data type">
-                            <span class="data-title">Option</span>
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Option</span>
+                        <% for(let i=0;i<shopList.length;i++){ %>
                             <div class="flex-btn">
-                                <span class="data-list">
-                                    <button class="delete-btn" id="deletebtn">
-                                        <ion-icon name="trash-outline"></ion-icon>
-                                    </button>
-                                </span>
-                                <span class="data-list">
-                                    <button class="delete-btn" id="updatebtn">
-                                        <ion-icon name="settings-outline"></ion-icon>
-                                    </button>
-                                </span>
+                                <div class="column-btn">
+                                    <span class="data-list">
+                                        <button class="delete-btn" id="deletebtn">
+                                            <ion-icon name="trash-outline"></ion-icon>
+                                        </button>
+                                    </span>
+                                    <span class="data-list">
+                                        <button class="delete-btn" id="updatebtn">
+                                            <ion-icon name="settings-outline"></ion-icon>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                            <% } %>
+
                     </div>
 
+
                 </div>
+
             </div>
         </div>
     </section>

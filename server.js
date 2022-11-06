@@ -11,6 +11,7 @@ import authRoutes from "./routes/auth.js";
 import shopRoutes from "./routes/shop.js";
 import adminRoutes from "./routes/admin.js";
 import cookieParser from "cookie-parser";
+import methodOverride from "method-override";
 import { notRequireAuth, requireAuthAdmin } from "./ventyfiToken.js";
 import cors from "cors";
 const server = express();
@@ -20,7 +21,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.static("public"));
 server.use(cors());
-
+server.use(methodOverride("_method"));
 dotenv.config();
 
 server.use(morgan("dev"));
