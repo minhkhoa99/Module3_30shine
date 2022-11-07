@@ -34,3 +34,11 @@ export const datlich = async (req, res) => {
     });
   } catch (err) {}
 };
+
+export const vitri = async (req, res) => {
+  try {
+    res.render("vitri", {
+      userName: req.cookies.access_token,
+    });
+  } catch (err) {}
+};
