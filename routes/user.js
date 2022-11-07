@@ -1,9 +1,11 @@
 import express from "express";
+import { addCombo } from "../controllers/admin.js";
 import {
   dashboard,
   signup,
   clientSchedule,
   datlich,
+  vitri,
 } from "../controllers/User.js";
 import { notRequireAuth } from "../ventyfiToken.js";
 const router = express.Router();
@@ -15,6 +17,8 @@ router.get("/hanh-trinh-toa-sang", clientSchedule);
 router.delete("/hanh-trinh-toa-sang", clientSchedule);
 
 router.get("/signup", notRequireAuth, signup);
-
+//get dat lich
 router.get("/datlich", datlich);
+
+router.get("/vi-tri", vitri);
 export default router;

@@ -26,22 +26,6 @@
                     <p>Anh đang khóa quyền truy cập vị trí, anh tìm salon theo thành phố bên dưới nhé!</p>
                 </div>
             </div>
-            <% for( let i=0; i < data.length; i++ ) { %>
-                <div class="location-area-3">
-                    <div class="location-area-3-1">
-                        <%= data[i].name %>
-                    </div>
-                    <div id="<%= data[i].id  %>" class="location-area-3-2 salon">
-                        <img src=<%=data[i].image %> alt="">
-                        <div class="location-area-2-1">
-                            <p>
-                                <%= data[i].address %>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <% } %>
 
 
         </div>

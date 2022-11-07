@@ -177,12 +177,9 @@ export const editCombo = async (req, res, next) => {
 //delete
 export const deleteCombo = async (req, res, next) => {
   try {
-    const destroyShop = Combo.findById(req.params.id);
-    if (!destroyShop) return next(createError(404, " not found"));
-    if (destroyShop) {
-      await Shop.findByIdAndDelete(req.params.id);
-    }
-    res.status(201).json({
+    await Combo.findByIdAndDelete(req.params.id);
+
+    res.status(200).json({
       message: "delete successfully",
       status: "success",
     });

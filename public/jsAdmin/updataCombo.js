@@ -111,7 +111,7 @@ tbody.addEventListener("click", (e) => {
           nameStylist: formUpdate.nameStylist.value,
         };
         console.log(updateInfo);
-        fetch(api + `/hanh-trinh-toa-sang/${idUpdate}`, {
+        fetch(api + `/admin/hanh-trinh-toa-sang/${idUpdate}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -120,8 +120,6 @@ tbody.addEventListener("click", (e) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data.message);
-
             window.location.href = "/admin/hanh-trinh-toa-sang";
           })
           .catch((err) => {
@@ -129,21 +127,21 @@ tbody.addEventListener("click", (e) => {
           });
       });
     }
-    // } else if (
-    //   e.target.classList.contains("delete-icon") ||
-    //   e.target.classList.contains("delete-btn")
-    // ) {
-    //   let id =
-    //     e.target.classList[1].split("-")[1] ||
-    //     e.target.parentElement.classList[1].split("-")[1];
-    //   console.log(id);
-    //   // fetch
-    //   fetch(api + `/hanh-trinh-toa-sang/${id}`, {
-    //     method: "DELETE",
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       e.target.parentElement.parentElement.parentElement.parentElement.remove();
-    //     });
+  } else if (
+    e.target.classList.contains("delete-icon") ||
+    e.target.classList.contains("delete-btn")
+  ) {
+    let id =
+      e.target.classList[1].split("-")[1] ||
+      e.target.parentElement.classList[1].split("-")[1];
+    console.log(id);
+    // fetch
+    fetch(api + `/admin/hanh-trinh-toa-sang/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        e.target.parentElement.parentElement.parentElement.parentElement.remove();
+      });
   }
 });
