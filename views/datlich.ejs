@@ -20,9 +20,20 @@
                     <button class="vitri" id="vitri">
                         <div style="margin: 10px;"><img src="	https://30shine.com/static/media/homeOutline.76facfa5.svg"
                                 alt=""></div>
-                        <div class="content">Xem tất cả salon</div>
-                        <div class="img-vitri"><img class="vitri-img"
-                                src="	https://30shine.com/static/media/caretRight.b0d191b3.svg" alt=""></div>
+
+                        <% if (shop) { %>
+                            <div class="content">
+                                <%= shop.address %>
+                            </div>
+
+                            <% } else { %>
+                                <div class="content">Xem tất cả salon</div>
+
+                                <% } %>
+
+                                    <div class="img-vitri"><img class="vitri-img"
+                                            src="	https://30shine.com/static/media/caretRight.b0d191b3.svg" alt="">
+                                    </div>
                     </button>
                 </div>
             </div>
