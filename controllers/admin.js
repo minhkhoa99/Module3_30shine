@@ -93,15 +93,20 @@ export const postStore = async (req, res, next) => {
   }
 };
 
-//update dang lam
+//update
 export const edit = async (req, res, next) => {
   try {
-    console.log("hehehehe");
-    console.log(req.params.id);
-    console.log(req.body);
-
-    await Shop.findByIdAndUpdate(id, { $set: req.body });
-    await Shop.save();
+    await Shop.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    );
+    // console.log(req.shop.id);
+    res.status(201).json({
+      message: "update successfully",
+      status: "success",
+    });
+    // await Shop.save();
   } catch (err) {
     next(err);
   }
@@ -109,8 +114,11 @@ export const edit = async (req, res, next) => {
 
 export const deleteShop = async (req, res, next) => {
   try {
-    await Shop.deleteOne({ _id: req.params.id });
-
+    const destroyShop = Shop.findById(req.params.id);
+    if (!destroyShop) return next(createError(404, "Video not found"));
+    if (destroyShop) {
+      await Shop.findByIdAndDelete(req.params.id);
+    }
     res.status(201).json({
       message: "delete successfully",
       status: "success",
@@ -143,8 +151,42 @@ export const postCombo = async (req, res, next) => {
     const combo = new Combo(formData);
     combo.save();
     // res.send(req.body);
-    res.redirect("/admin//hanh-trinh-toa-sang");
+    res.redirect("/admin/hanh-trinh-toa-sang");
   } catch (err) {
     next(err);
+  }
+};
+
+export const editCombo = async (req, res, next) => {
+  try {
+    await Combo.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    );
+    console.log(req.params.id);
+    // console.log(req.shop.id);
+    res.status(201).json({
+      message: "update successfully",
+      status: "success",
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+//delete
+export const deleteCombo = async (req, res, next) => {
+  try {
+    const destroyShop = Combo.findById(req.params.id);
+    if (!destroyShop) return next(createError(404, " not found"));
+    if (destroyShop) {
+      await Shop.findByIdAndDelete(req.params.id);
+    }
+    res.status(201).json({
+      message: "delete successfully",
+      status: "success",
+    });
+  } catch (err) {
+    console.log(err);
   }
 };

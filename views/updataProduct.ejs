@@ -125,14 +125,14 @@
                             <tr>
                                 <th scope="col">id</th>
                                 <th scope="col">Vị trí</th>
-                                <th scope="col">Địa chỉ</th>
                                 <th scope="col">Hình ảnh</th>
+                                <th scope="col">Địa chỉ</th>
                                 <th scope="col">Mô tả</th>
                                 <th scope="col">Option</th>
 
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="table-body">
                             <tr>
                                 <% for(let i=0;i<shopList.length;i++){ %>
 
@@ -143,10 +143,12 @@
                                         <%=shopList[i].location%>
                                     </td>
                                     <td scope="col">
-                                        <%=shopList[i].address%>
+                                        <%=(shopList[i].imageUrl).toString().substring(0,31)%>
+
                                     </td>
                                     <td scope="col">
-                                        <%=(shopList[i].imageUrl).toString().substring(0,31)%>
+                                        <%=shopList[i].address%>
+
                                     </td>
                                     <td scope="col">
                                         <%=shopList[i].description%>
@@ -154,12 +156,12 @@
                                     <td scope="col">
                                         <span class="data-list">
                                             <button class="delete-btn d-<%=shopList[i]._id%>" id="deletebtn">
-                                                <ion-icon name="trash-outline"></ion-icon>
+                                                <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
                                             </button>
                                         </span>
                                         <span class="data-list">
-                                            <button class="delete-btn u-<%=shopList[i]._id%>" id="updatebtn">
-                                                <ion-icon name="settings-outline"></ion-icon>
+                                            <button class="delete-btn update-btn u-<%=shopList[i]._id%>" id="updatebtn">
+                                                <ion-icon class="update-icon" name="settings-outline"></ion-icon>
                                             </button>
                                         </span>
                                     </td>

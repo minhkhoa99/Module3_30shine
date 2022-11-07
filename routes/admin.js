@@ -9,6 +9,8 @@ import {
   postCombo,
   renderUsername,
   postStore,
+  editCombo,
+  deleteCombo,
 } from "../controllers/admin.js";
 import express from "express";
 import { requireAuthAdmin } from "../ventyfiToken.js";
@@ -47,8 +49,8 @@ router.post("/combo", postCombo);
 //put
 
 //
-router.put("/hanh-trinh-toa-sang/:id");
+router.put("/hanh-trinh-toa-sang/:id", editCombo);
 
 //delete
-router.delete("/hanh-trinh-toa-sang/:id");
+router.delete("/hanh-trinh-toa-sang/:id", deleteCombo);
 export default router;
