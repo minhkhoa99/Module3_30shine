@@ -14,51 +14,98 @@
     <div class="calendar">
         <div class="book-calendar">
             <div class="title">ĐẶT LỊCH GIỮ CHỖ</div>
+
+
             <div class="selection">
                 <p style="margin-left:40px ;">1.Chọn salon</p>
+
                 <div class="btn">
                     <button class="vitri" id="vitri">
-                        <div style="margin: 10px;"><img src="	https://30shine.com/static/media/homeOutline.76facfa5.svg"
-                                alt=""></div>
 
-                        <% if (shop) { %>
-                            <div class="content">
-                                <%= shop.address %>
+                        <div class="header-btn">
+                            <div class="image-home" style="margin: 10px;"><img
+                                    src="	https://30shine.com/static/media/homeOutline.76facfa5.svg" alt="">
+
                             </div>
+                            <div class="content-title">
+                                <% if (shop) { %>
+                                    <div class="wrapper-content">
+                                        <div class="content">
+                                            <%= shop.address %>
 
-                            <% } else { %>
-                                <div class="content">Xem tất cả salon</div>
+                                        </div>
 
-                                <% } %>
-
-                                    <div class="img-vitri"><img class="vitri-img"
-                                            src="	https://30shine.com/static/media/caretRight.b0d191b3.svg" alt="">
                                     </div>
+
+                                    <% } else { %>
+                                        <div class="content">Xem tất cả salon
+
+                                        </div>
+                                        <% } %>
+                            </div>
+                        </div>
+
                     </button>
                 </div>
             </div>
             <div class="selection">
                 <p style="margin-left:40px ;">2.Chọn dịch vụ</p>
                 <div class="btn">
-                    <button class="vitri" id="vitri">
-                        <div style="margin: 10px"><img src="https://30shine.com/static/media/homeOutline.76facfa5.svg"
-                                alt=""></div>
-                        <div class="content">Xem tất cả dịch vụ</div>
-                        <div class="image-vitri"><img class="vitri-img"
-                                src="https://30shine.com/static/media/caretRight.b0d191b3.svg" alt=""></div>
+                    <button class="vitri" id="vitri2">
+
+                        <div class="header-btn">
+                            <div class="image-home" style="margin: 10px;"><img
+                                    src="	https://30shine.com/static/media/homeOutline.76facfa5.svg" alt="">
+
+                            </div>
+                            <div class="content-title">
+                                <% if (shop) { %>
+                                    <div class="wrapper-content">
+                                        <div class="content">
+                                            <%= shop.title %>
+
+                                        </div>
+
+                                    </div>
+
+                                    <% } else { %>
+                                        <div class="content">Xem tất cả dịch vụ
+
+                                        </div>
+                                        <% } %>
+                            </div>
+                        </div>
                     </button>
                 </div>
             </div>
             <div class="selection">
                 <p style="margin-left:40px ;">3.Chọn Style list</p>
                 <div class="btn">
-                    <button class="vitri" id="vitri">
-                        <div style="margin: 10px"><img src="https://30shine.com/static/media/homeOutline.76facfa5.svg"
-                                alt=""></div>
-                        <div class="content">Xem tất cả dịch vụ</div>
-                        <div class="image-vitri"><img class="vitri-img"
-                                src="https://30shine.com/static/media/caretRight.b0d191b3.svg" alt=""></div>
+                    <button class="vitri" id="vitri3">
+                        <div class="header-btn">
+                            <div class="image-home" style="margin: 10px;"><img
+                                    src="	https://30shine.com/static/media/homeOutline.76facfa5.svg" alt="">
+
+                            </div>
+                            <div class="content-title">
+                                <% if (shop) { %>
+                                    <div class="wrapper-content">
+                                        <div class="content">
+                                            <%= shop.address %>
+
+                                        </div>
+
+                                    </div>
+
+                                    <% } else { %>
+                                        <div class="content">Xem tất cả salon
+
+                                        </div>
+                                        <% } %>
+                            </div>
+                        </div>
                     </button>
+
                 </div>
             </div>
             <div class="selection">
@@ -75,16 +122,15 @@
                         </button>
                     </div>
                 </div>
-                <div><button class="complete">Hoàn tất</button></div>
+                <div><button class="complete" id="submitBtn">Hoàn tất</button></div>
                 <div class="cutandpay">Cắt xong trả tiền, huỷ lịch không sao</div>
             </div>
-
-
         </div>
+    </div>
 
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="/jsdatlich/datlich.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/jsdatlich/datlich.js"></script>
 </body>
 
 </html>

@@ -15,16 +15,12 @@
         <div class="booking-single-screen-1">
             <img class="booking-single-screen-1-img" src="	https://30shine.com/static/media/arrowLeft.3e6be3da.svg"
                 alt="">
-            <span class="booking-single-screen-1-1">Chọn dịch vụ</span>
+            <span class="booking-single-screen-1-1">Chọn Stylist</span>
             <span class="booking-single-screen-1-quy">1k = 1000đ</span>
         </div>
         <div class="booking-single-screen-2">
             <div class="service">
-                <div class="service-1">
-                    <span>Cắt gội massage</span>
-                    <span>Combo chăm sóc da</span>
-                    <span>Uốn Hàn Quốc</span>
-                </div>
+
                 <div class="service-2">
                     <div class="service-2-1">
                         <img src="https://30shine.com/static/media/bot_avatar_1654_1.26e1da41.jpg" alt="">
@@ -33,10 +29,7 @@
                             tai và Uốn/Nhuộm dùng kèm rất tốt nữa đó
                         </span>
                     </div>
-                    <div class="service-2-2">
-                        <div class="service-2-2-1">CẮT GỘI MASSAGE</div>
 
-                    </div>
                 </div>
 
                 <div class="service-3">
@@ -45,31 +38,18 @@
                         <div class="service-3-1">
                             <a href="/datlich?step=0&shopId=<%=comboList[i].comboid  %>" class="combo-link">
                                 <div class="service-3-1-1">
-                                    <img src=" <%=comboList[i].imageUrl %>" alt="">
+                                    <img src=" <%=comboList[i].imageStylist %>" class="image-stylist" alt="">
                                     <div class="sokai">
                                         <span>
-                                            <%=comboList[i].title %>
+                                            <%=comboList[i].nameStylist %>
                                         </span>
                                     </div>
-                                    <p>
-                                        <%=comboList[i].description %>
-                                    </p>
-                                    <div class="nedan">
-                                        <span>
-                                            Giá: <%=comboList[i].price %>
-                                        </span>
-                                    </div>
-
                                 </div>
                             </a>
 
                         </div>
 
                         <% } %>
-
-
-
-
                 </div>
             </div>
         </div>

@@ -5,7 +5,6 @@ import {
   signup,
   clientSchedule,
   datlich,
-  vitri,
 } from "../controllers/User.js";
 import { notRequireAuth } from "../ventyfiToken.js";
 const router = express.Router();
@@ -19,6 +18,8 @@ router.delete("/hanh-trinh-toa-sang", clientSchedule);
 router.get("/signup", notRequireAuth, signup);
 //get dat lich
 router.get("/datlich", datlich);
+router.post("/datlich", datlich);
 
-router.get("/vi-tri", vitri);
+// router.get("/vi-tri", vitri);
+router.get("/service");
 export default router;

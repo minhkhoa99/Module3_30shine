@@ -71,7 +71,7 @@ tbody.addEventListener("click", (e) => {
       </div>
       <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Hình ảnh</label>
-          <input type="text" class="form-control" value="${info.imageUrl}" name="imageUrl" id="inputPassword4">
+          <input type="url" class="form-control" value="${info.imageUrl}" name="imageUrl" id="inputPassword4">
       </div>
       <div class="col-6">
           <label for="inputAddress2" class="form-label">Tiêu đề</label>
@@ -87,7 +87,7 @@ tbody.addEventListener("click", (e) => {
       </div>
       <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Stylist ảnh</label>
-          <input type="text" class="form-control" value="${info.imageStylist}" name="imageStylist" id="inputPassword4">
+          <input type="url" class="form-control" value="${info.imageStylist}" name="imageStylist" id="inputPassword4">
       </div>
       <div class="col-md-6">
           <label for="inputCity" class="form-label">stylist</label>

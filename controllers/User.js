@@ -1,5 +1,7 @@
 /** @format */
+import e from "express";
 import Shop from "../model/shopAddress.js";
+import Combo from "../model/selectCombo.js";
 export const dashboard = (req, res) => {
   if (Object.keys(req.cookies).length === 0) {
     res.render("dashboard", {
@@ -22,9 +24,9 @@ export const clientSchedule = (req, res) => {
   });
 };
 
-export const datlich = async (req, res) => {
+export const datlich = async (req, res, next) => {
   try {
-    let { step, shopId } = req.query;
+    var { step, shopId } = req.query;
     if (step == "0") {
       if (shopId) {
         console.log("kkkk");
@@ -53,35 +55,19 @@ export const datlich = async (req, res) => {
           userName: req.cookies.access_token,
         });
       });
-    }
-  } catch (err) {
-    res.status(404).json("something went really wrong");
-    next(err);
-  }
-};
-
-export const vitri = async (req, res, next) => {
-  try {
-    let { step, shopId } = req.query;
-    console.log(req.query);
-    if (step == "0") {
-      if (shopId) {
-        Shop.find({}, (err, shop) => {
-          let shopData = shop.map((shop) => shop.toObject());
-
-          res.render("datlich", {
-            shopList: shopData,
-            userName: req.cookies.access_token,
-          });
+    } else if (step == "2") {
+      Combo.find({}, (err, combo) => {
+        combo.map((combo) => combo.toObject());
+        res.render("service", {
+          comboList: combo,
+          userName: req.cookies.access_token,
         });
-      } else {
-        res.render("vitri");
-      }
-    } else if (step == "1") {
-      Shop.find({}, (err, shop) => {
-        let shopData = shop.map((shop) => shop.toObject());
-        res.render("vitri", {
-          shopList: shopData,
+      });
+    } else if (step == "3") {
+      Combo.find({}, (err, combo) => {
+        combo.map((combo) => combo.toObject());
+        res.render("stylist", {
+          comboList: combo,
           userName: req.cookies.access_token,
         });
       });
@@ -91,3 +77,35 @@ export const vitri = async (req, res, next) => {
     next(err);
   }
 };
+
+// export const vitri = async (req, res, next) => {
+//   try {
+//     let { step, shopId } = req.query;
+//     console.log(req.query);
+//     if (step == "0") {
+//       if (shopId) {
+//         Shop.find({}, (err, shop) => {
+//           let shopData = shop.map((shop) => shop.toObject());
+
+//           res.render("datlich", {
+//             shopList: shopData,
+//             userName: req.cookies.access_token,
+//           });
+//         });
+//       } else {
+//         res.render("vitri");
+//       }
+//     } else if (step == "1") {
+//       Shop.find({}, (err, shop) => {
+//         let shopData = shop.map((shop) => shop.toObject());
+//         res.render("vitri", {
+//           shopList: shopData,
+//           userName: req.cookies.access_token,
+//         });
+//       });
+//     }
+//   } catch (err) {
+//     res.status(404).json("something went really wrong");
+//     next(err);
+//   }
+// };
