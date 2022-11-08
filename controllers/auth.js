@@ -17,12 +17,10 @@ export const signup = async (req, res, next) => {
       .status(200)
       .json({ status: "success", message: "User created successfully" });
   } catch (err) {
-    res
-      .status(500)
-      .json({
-        status: "fail",
-        message: "SĐT hoặc tên bị trùng vui lòng nhập lại",
-      });
+    res.status(500).json({
+      status: "fail",
+      message: "SĐT hoặc tên bị trùng vui lòng nhập lại",
+    });
   }
 };
 
@@ -50,6 +48,9 @@ export const signin = async (req, res, next) => {
       .cookie("access_token", token, {
         httpOnly: true,
       })
+      .cookie("userName", user._id, {
+        httpOnly: true,
+      })
       .status(200)
       .json({ others, status: "success" });
   } catch (err) {
@@ -57,6 +58,16 @@ export const signin = async (req, res, next) => {
   }
 };
 
+// export const signOut = async (req, res, next) => {
+//   try {
+//     res
+//       .clearCookie("access_token")
+//       .status(200)
+//       .json({ message: "Successfully logged out" });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 //signin danh cho admin tim kiem ten dang nhap
 // export const signinAdmin = async (req, res, next) => {
 //   try {

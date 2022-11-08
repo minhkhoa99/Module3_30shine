@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import User from "../model/user.js";
 import Shop from "../model/shopAddress.js";
 import Combo from "../model/selectCombo.js";
+import Schedule from "../model/schedule.js";
 import { createError } from "../error.js";
 import Jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
@@ -60,8 +61,20 @@ export const renderUsername = async (req, res, next) => {
 // };
 
 //quanly dat lich
-export const renderSchedule = (req, res) => {
-  res.render("adminSchedule");
+export const getscheduleAdmin = (req, res, next) => {
+  try {
+    Schedule.find({}, (err, schedule) => {
+      let scheduleUser = schedule.map((schedule) => schedule.toObject());
+
+      res.render("adminSchedule", {
+        schedule: scheduleUser,
+        userName: req.cookies.userName,
+      });
+    });
+  } catch (err) {
+    res.status(404).json("something went really wrong");
+    next(err);
+  }
 };
 // san pham
 //get san pham
@@ -115,7 +128,7 @@ export const edit = async (req, res, next) => {
 export const deleteShop = async (req, res, next) => {
   try {
     const destroyShop = Shop.findById(req.params.id);
-    if (!destroyShop) return next(createError(404, "Video not found"));
+    if (!destroyShop) return next(createError(404, " not found"));
     if (destroyShop) {
       await Shop.findByIdAndDelete(req.params.id);
     }

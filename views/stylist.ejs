@@ -36,7 +36,8 @@
                     <% for( let i=0; i < comboList.length; i++ ) { %>
 
                         <div class="service-3-1">
-                            <a href="/datlich?step=0&shopId=<%=comboList[i].comboid  %>" class="combo-link">
+                            <a href="/datlich?step=0&shopId=<%=shopId%>&comboId=<%=comboList[i].comboid  %>"
+                                class="combo-link">
                                 <div class="service-3-1-1">
                                     <img src=" <%=comboList[i].imageStylist %>" class="image-stylist" alt="">
                                     <div class="sokai">

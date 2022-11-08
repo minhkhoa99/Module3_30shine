@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="/dashboard.css">
     <link rel="stylesheet" href="/owl.carousel.min.css">
     <link rel="stylesheet" href="/owl.theme.default.min.css">
@@ -31,55 +32,61 @@
                         <i class="uil uil-clock-three"></i>
                         <span class="text">Hành trình toả sáng</span>
                     </div>
+                    <table class="table table-striped table-hover">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Số điện thoại</th>
+                                    <th scope="col">Salon</th>
+                                    <th scope="col">Dịch vụ</th>
+                                    <th scope="col">Stylist</th>
+                                    <th scope="col">Option</th>
 
-                    <div class="activity-data">
-                        <div class="data names">
-                            <span class="data-title">id</span>
+                                </tr>
+                            </thead>
+                            <% for(let i=0;i< schedule.length;i++){%>
+                                <tbody id="table-body">
+                                    <tr>
+                                        <td scope="col">
+                                            <%=schedule[i]._id %>
 
-                            <span class="data-list">1</span>
-                        </div>
-                        <div class="data email">
-                            <span class="data-title">Số điện thoại</span>
-                            <span class="data-list">0934595049</span>
+                                        </td>
 
-                        </div>
-                        <div class="data email">
-                            <span class="data-title">Tên</span>
-                            <span class="data-list">Phú</span>
+                                        <td scope="col">
 
-                        </div>
-                        <div class="data joined">
-                            <span class="data-title">Đã tạo</span>
-                            <span class="data-list">2022-02-12</span>
+                                        </td>
+                                        <td scope="col">
+                                            <%=schedule[i].salon %>
 
-                        </div>
-                        <div class="data type">
-                            <span class="data-title">Giờ hẹn</span>
-                            <span class="data-list">New</span>
 
-                        </div>
-                        <div class="data type">
-                            <span class="data-title">Lựa chọn dịch vụ</span>
-                            <span class="data-list">New</span>
+                                        </td>
+                                        <td scope="col">
+                                            <%=schedule[i].combo %>
 
-                        </div>
-                        <div class="data type">
-                            <span class="data-title">Salon gần nhất</span>
-                            <span class="data-list">New</span>
 
-                        </div>
-                        <div class="data type">
-                            <span class="data-title">Option</span>
-                            <div class="flex-btn">
-                                <span class="data-list">
-                                    <button class="delete-btn" id="deletebtn">
-                                        <ion-icon name="trash-outline"></ion-icon>
-                                    </button>
-                                </span>
+                                        </td>
+                                        <td scope="col">
+                                            <%=schedule[i].styList %>
 
-                            </div>
-                        </div>
-                    </div>
+                                        </td>
+                                        <td scope="col">
+                                            <span class="data-list">
+                                                <button style="width:100% ; padding:3px"
+                                                    class="delete-btn d-<%=schedule[i]._id%>%>" id="deletebtn">
+                                                    Huỷ lịch
+                                                </button>
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+                                </tbody>
+                                <% } %>
+                        </table>
+                    </table>
                 </div>
             </div>
         </section>
@@ -95,7 +102,7 @@
                 crossorigin="anonymous"></script>
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
             <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-            <script src="/jsAdmin/adminSchedule.js"></script>
+
             <script src="/js/login.js"></script>
 </body>
 

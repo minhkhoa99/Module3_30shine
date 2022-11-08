@@ -12,6 +12,8 @@
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <title>Admin Dashboard</title>
 </head>
@@ -88,70 +90,82 @@
                     <span class="text">Quản lý đặt lịch</span>
                 </div>
 
-                <div class="activity-data">
-                    <div class="data names">
-                        <span class="data-title">id</span>
 
-                        <span class="data-list">1</span>
-                    </div>
-                    <div class="data email">
-                        <span class="data-title">Số điện thoại</span>
-                        <span class="data-list">0934595049</span>
+                <table class="table table-striped table-hover">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">SĐT</th>
+                                <th scope="col">Salon</th>
+                                <th scope="col">Dịch vụ</th>
+                                <th scope="col">Stylist</th>
+                                <th scope="col">Option</th>
 
-                    </div>
-                    <div class="data email">
-                        <span class="data-title">Tên</span>
-                        <span class="data-list">Phú</span>
+                            </tr>
+                        </thead>
+                        <% for(let i=0;i< schedule.length;i++){%>
+                            <tbody id="table-body">
+                                <tr>
+                                    <td scope="col">
+                                        <%=schedule[i]._id %>
 
-                    </div>
-                    <div class="data joined">
-                        <span class="data-title">Đã tạo</span>
-                        <span class="data-list">2022-02-12</span>
+                                    </td>
 
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Giờ hẹn</span>
-                        <span class="data-list">New</span>
+                                    <td scope="col">
 
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Lựa chọn dịch vụ</span>
-                        <span class="data-list">New</span>
-
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Salon gần nhất</span>
-                        <span class="data-list">New</span>
-
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Stylist</span>
-                        <span class="data-list">New</span>
-
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Option</span>
-                        <div class="flex-btn">
-                            <span class="data-list">
-                                <button class="delete-btn" id="deletebtn">
-                                    <ion-icon name="trash-outline"></ion-icon>
-                                </button>
-                            </span>
-                            <span class="data-list">
-                                <button class="delete-btn" id="updatebtn">
-                                    <ion-icon name="settings-outline"></ion-icon>
-                                </button>
-                            </span>
-                        </div>
+                                    </td>
+                                    <td scope="col">
+                                        <%=schedule[i].salon %>
 
 
+                                    </td>
+                                    <td scope="col">
+                                        <%=schedule[i].combo %>
 
-                    </div>
-                </div>
+
+                                    </td>
+                                    <td scope="col">
+                                        <%=schedule[i].styList %>
+
+                                    </td>
+                                    <td scope="col">
+                                        <span class="data-list">
+                                            <button class="delete-btn d-<%=schedule[i]._id%>" id="deletebtn">
+                                                <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
+                                            </button>
+                                        </span>
+                                        <span class="data-list">
+                                            <button class="delete-btn update-btn u-<%=schedule[i]._id%>" id="updatebtn">
+                                                <ion-icon class="update-icon" name="settings-outline"></ion-icon>
+                                            </button>
+                                        </span>
+
+                                    </td>
+
+
+                                </tr>
+
+                            </tbody>
+                            <% } %>
+                    </table>
+                </table>
+
+
             </div>
+        </div>
         </div>
     </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="/jsAdmin/adminSchedule.js"></script>
 </body>

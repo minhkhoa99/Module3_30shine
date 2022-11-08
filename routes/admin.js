@@ -1,7 +1,6 @@
 import {
   signinAdmin,
   dashSignin,
-  renderSchedule,
   addStore,
   edit,
   deleteShop,
@@ -11,8 +10,10 @@ import {
   postStore,
   editCombo,
   deleteCombo,
+  getscheduleAdmin,
 } from "../controllers/admin.js";
 import express from "express";
+
 import { requireAuthAdmin } from "../ventyfiToken.js";
 const router = express.Router();
 //getdashboad Signin
@@ -24,9 +25,9 @@ router.post("/signin", signinAdmin);
 router.get("/dashboard", renderUsername);
 
 //get adminschdule
-router.get("/quan-ly-dat-lich", renderSchedule);
+router.get("/quan-ly-dat-lich", getscheduleAdmin);
 //post
-router.post("/quan-ly-dat-lich");
+router.post("/quan-ly-dat-lich", getscheduleAdmin);
 //put
 router.put("/quan-ly-dat-lich");
 

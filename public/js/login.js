@@ -1,8 +1,9 @@
-let apiLogin = "http://localhost:3000";
+let loginLocal = "http://localhost:3000";
 const form = document.getElementById("formlogin");
 const btnLogin = document.querySelector(".btn-continue");
 const btnLogout = document.getElementById("btn-logout");
 const message = document.querySelector(".message");
+let tbody = document.getElementById("table-body");
 
 console.log(form);
 form.addEventListener("submit", (e) => {
@@ -30,7 +31,7 @@ form.addEventListener("submit", (e) => {
     password,
   };
 
-  fetch(apiLogin + "/", {
+  fetch(loginLocal + "/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
